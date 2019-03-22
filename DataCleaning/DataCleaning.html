@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="../css/ImageGallery.css" rel="stylesheet" />
+
+    <link rel="icon" href="Images/RM-Logo.ico" />
+    <title>EoA :: About the Data</title>
+
+</head>
+
+<body>
+
+    <div class="product-slider row" style="margin-left:10px; margin-right:10px">
+
+        <div style="font-family: 'Trebuchet MS'">
+            <h3 class="underline">
+                <a type="button" class="btn btn-success btn-circle" style="float:left; height:30px"
+                   href="../Home.html">
+                    <i class="glyphicon glyphicon-home"></i>
+                </a>
+                &nbsp;&nbsp;
+                About the Data
+            </h3>
+        </div>
+
+        <div style="font-family: Tahoma;">
+
+            <div class="col-md-12" style="padding-top:20px; padding-bottom:10px"><h3>Data Sources, Data Cleaning and Exploration</h3></div>
+
+            <div style="text-align:justify">
+
+                <div class="col-md-12"><h4 style="color:darkcyan;">Data Sources</h4></div>
+                <div class="col-md-6">
+                    <p>
+                        The data used in this project is sourced from two organizations: <a href='https://data.worldbank.org/indicator'>The World Bank</a> and
+                        <a href='http://infrastructureafrica.opendataforafrica.org/'>The African Development Bank Group</a>.
+                        Both organizations offer API access to their data. Most datasets were clean, only requiring data wrangling.
+                        Since plots have been created using both R and Python, there are multiple data cleaning files, which are available for download at the bottom of this page.
+                        <br />
+                        <br />
+                        The project scope is Sub-Saharan Africa, so data was filtered to include just those 47 countries.
+                        The map shows the countries colored by their 2016 population to illustrate.
+                        The Sub-Saharan countries are geographically located in southern part of Africa.
+                        They contrast with North Africa, whose territories, languages, and cultures are very close and like Arab world.
+                        Therefore, we have decided to differentiate Sub-Saharan countries from North Africa and focus on Sub-Saharan countries.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img src='Images/cleaning_map_pop.png' style="height: 450px; width: 100%">
+                </div>
+
+                <div class="col-md-12"><h4 style="color:darkcyan;">Data Collection</h4></div>
+                <div class="col-md-12" style="width:100%">
+                    <p>
+                        <strong>R</strong> - In the R data cleaning file, data is accessed using an R library called
+                        <a href='https://cran.r-project.org/web/packages/WDI/WDI.pdf'>WDI (World Development Indicators)</a>
+                        that is a wrapper for the World Bank API. The R data cleaning file (Data_Cleaning.R) includes the following World Bank indicators:
+                        <strong>GDP Growth, Inflation (measured by the GDP Deflator), Inflation (measured by CPI), Employment,</strong> and
+                        <strong>Vulnerable Employment</strong>. The data was clean, except for a few "outliers" in the inflation data due to hyperinflation.
+                        The second R data cleaning file (DataExploration_and_Cleaning.R) includes the following World Bank indicator: <strong>Share of GDP on Infrastructure</strong>
+                        and the <strong>Infrastructure Index</strong> from The African Development Bank Group.
+                        <br />
+                        <br />
+                        <strong>Python</strong>  - For the Python file, data was collected from the World Bank API using the
+                        <a href='https://wbdata.readthedocs.io/en/latest/'>wbdata library</a>.
+                        The indicators included in the Python data cleaning file (get_clean_data.py) are <strong>
+                            GDP, GDP Growth, Population, Access to Electricity (%),
+                            Access to Internet (%)
+                        </strong>, and <strong>Cellphone Subscriptions (per 100)</strong>.
+                        <br>
+                        <br />
+                        All datasets obtained from World Bank have a consistent format of the following variables: iso2c, country, indicator, year, iso3c,
+                        region, capital, longitude, latitude, income, lending.
+                        The data is filtered on the 3-digit-country code, iso3c, to focus on Sub-Saharan African countries.
+                        The plot below shows a list of the World Bank data features.
+                        <br>
+                        <br />
+                    </p>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <center>
+                        <img src='Images/cleaning_features_plot.png' style="height: 550px; width: 85%">
+                    </center>
+                </div>
+
+                <div class="col-md-12"><h4 style="color:darkcyan;">Data Exploration</h4></div>
+                <div class="col-md-12" style="width:100%">
+                    <p>
+                        <strong>Inflation</strong> can be measured two ways, through the Consumer Price Index (CPI) and the GDP Deflator.
+                        Due to periods of hyperinflation in some African countries, the data has outliers, which are removed for further processing.
+                        For the CPI, one outlier was removed: Democratic Republic of Congo, 1994 (23,773%). The same process was repeated for the alternate measure of inflation,
+                        the GDP Deflator, as show in the below plot. The same outlier was removed: Democratic Republic of Congo, 1994 (26,766%).
+                        <br />
+                        <br />
+                    </p>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <div class="col-md-6">
+                        <center>
+                            <img src='Images/cleaning_cpi.jpeg' style="height: 450px; width: 90%">
+                        </center>
+                    </div>
+                    <div class="col-md-6">
+                        <center>
+                            <img src='Images/cleaning_gdpd.jpeg' style="height: 450px; width: 90%">
+                        </center>
+                    </div>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <p>
+                        <br />
+                        <br />
+                        Both the <strong>Employment</strong> and <strong>Vulnerable Employment</strong> data was clean, without any outliers.
+                        Sub-Saharan Africa has a higher level of employment, but also a higher level of vulnerable employment when compared to the World.
+                        Additionally, the vulnerable employment data has a wider distribution in Sub-Saharan Africa than for the World.
+                        <br />
+                        <br />
+                    </p>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <div class="col-md-6">
+                        <center>
+                            <img src='Images/cleaning_employment.jpeg' style="height: 450px; width: 90%">
+                        </center>
+                    </div>
+                    <div class="col-md-6">
+                        <center>
+                            <img src='Images/cleaning_vulnerable_employment.jpeg' style="height: 450px; width: 90%">
+                        </center>
+                    </div>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <p>
+                        <br />
+                        <br />
+                        The distribution of <strong>Share of GDP on Infrastructure</strong> is shown below from 1990 to 2016. No outliers exist, as this data is an index.
+                        This dataset is used to investigate the index of individual countries in certain years.
+                        In this way, there can be deeper understanding of distribution of infrastructure investment.
+                        <br />
+                        <br />
+                    </p>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <center>
+                        <img src='Images/cleaning_share_of_gdp.png' style="height: 350px; width: 45%">
+                    </center>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <p>
+                        <br />
+                        <br />
+                        The following boxplot displays full range of variations of the <strong>Infrastructure Index</strong> in 2003 and 2016.
+                        While the distributions remain similar, there exist more distinctive outliers in 2006 dataset.
+                        This outlier can represent important part of the dataset, especially for understanding the complex continent of Africa contextually.
+                        <br />
+                        <br />
+                    </p>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <center>
+                        <img src='Images/cleaning_infra_index.png' style="height: 400px; width: 40%">
+                    </center>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <p>
+                        <br />
+                        <br />
+                        From the below pairplot, there is a positive correlation between <strong>Access to Electricity</strong> to both <strong>Access to Internet</strong>
+                        and <strong>Cellphone Subscriptions</strong>. Additionally, Population and GDP are correlated.
+                        Correlation coefficients were also determined to support the visual evidence.
+                        The distribution of the infrastructure indicators are right-tailed, which indicates some disparity in the availability of those services by country.
+                        Countries are also grouped throughout this project by their <strong>Income Level</strong>, as designated by the World Bank.
+                        The data was remapped to include this attribute, and is reflected in the pairplot below and throughout the project.
+                        <br />
+                        <br />
+                    </p>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <center>
+                        <img src='Images/cleaning_pairplot.png' style="height: 400px; width: 50%">
+                    </center>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <p>
+                        <br />
+                        <br />
+                        Indicators are higher for those countries designated as High or Upper middle income, as expected.
+                        However, running an ANOVA 1-way test shows no significant difference in the infrastructure indicators (electric, internet, cellphones)
+                        by the country's income level.
+                        <br />
+                        <br />
+                    </p>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <center>
+                        <img src='Images/cleaning_barplot.png' style="height: 400px; width: 50%">
+                    </center>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <p>
+                        <br />
+                        <br />
+                        Finally, the data was also checked for missing values. Country names were cleaned to strip diacritics.
+                        New variables were created to investigate growth rates.
+                        In sum, this data was clean with very few missing values.
+                        <br />
+                        <br />
+                    </p>
+                </div>
+
+            </div>
+
+            <hr style="border: 1px solid green;" />
+
+            <div class="col-md-12">
+                <h2 style="float:left; padding-right:30px">Download Code</h2>
+                <a type="button" class="btn btn-success btn-circle" style="height:35px" target="_blank"
+                   href="https://drive.google.com/drive/u/1/folders/1Cs5saOJLrmN3o8xeFGhd1YlZsTEWDd8L">
+                    <i class="glyphicon glyphicon-download" style="font-size:1.5em; text-align:center"></i>
+                </a>
+            </div>
+            <div style="text-align:justify">
+
+                <div class="col-md-12" style="width:100%">
+                    <p>
+                        All scripts used in this project can be accessed below. Note that visualizations created in Tableau (maps, area chart, bubble chart)
+                        will not be included in these files.
+                        <br />
+                    </p>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <ul style="font-family:'Courier New'">
+
+                        <li style="list-style:none"><strong>Data Cleaning Files</strong></li>
+                        <li>Data_Cleaning.R - <i>Collects and cleans all data used in Section 1, creates EDA plots</i></li>
+                        <li>DataExploration_and_Cleaning.R - <i>Collects and cleans all data used in Section 2, creates EDA plots</i></li>
+                        <li>part1_get_clean_data.py - <i>Collects and cleans all data used in Section 3, creates EDA plots</i></li>
+
+                        <li style="list-style:none; padding-top:15px"><strong>Viz Creation Files</strong></li>
+                        <li>All_Viz.R - <i>Creates line chart, circle view chart, and density chart in Section 1</i></li>
+                        <li>Make_Plots.R - <i>Collects and cleans all data used in Section 3, creates EDA plots</i></li>
+                        <li>data_cleaning.py - <i>Creates line chart in Section 2</i></li>
+                        <li>Make_Plots.py - <i>Creates bar chart and density plot in Section 2</i></li>
+                        <li>part_1_make_plots.py - <i>Creates pie chart and lollipop chart in Section 1, heatmaps and scatterplots in Section 3</i></li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row" style="height:80px; width:100%"></div>
+
+    <footer class="footer">
+        <div class="container" style="text-align:center; width:100%">
+            <span class="text-muted" style="color:white">
+                Georgetown University&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                ANLY 503 - Analytical Data Visualization&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                Kendra Gedney&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                Sooeun Oh&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                Ratnadeep Mitra
+            </span>
+        </div>
+    </footer>
+
+
+</body>
+</html>

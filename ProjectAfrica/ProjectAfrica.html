@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="../css/ImageGallery.css" rel="stylesheet" />
+    <script src="../js/ProjectAfrica.js"></script>
+
+    <link rel="icon" href="Images/RM-Logo.ico" />
+    <title>Visual Exploration</title>
+
+
+    <style>
+        .navbar-default .navbar-nav .active a {
+            color: black !important;
+        }
+
+
+            .navbar-default .navbar-nav .active a::after {
+                border-bottom: 5px solid #ff6a00;
+                bottom: -10px;
+                content: " ";
+                left: 0;
+                position: absolute;
+                right: 0;
+            }
+
+
+        iframe {
+            min-width: 100%;
+        }
+    </style>
+
+
+</head>
+
+<body style="font-family:'Tahoma', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+
+    <nav class="navbar navbar-default" style="background: url('../Images/banner_orig.jpg'); background-size: cover; height:175px; position:relative">
+        <div class="container-fluid" style="position:absolute; bottom:0; right: 0">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../Home.html" id="clk_home" style="color:white">Home</a></li>
+                    <li class="active"><a href="#" id="clk_intro" onclick="showSection(id)" style="color:white">Introduction</a></li>
+                    <li><a href="#" id="clk_scope" onclick="showSection(id)" style="color:white">Project Scope</a></li>
+                    <li><a href="#" id="clk_empl" onclick="showSection(id)" style="color:white">Employment</a></li>
+                    <li><a href="#" id="clk_infra" onclick="showSection(id)" style="color:white">Infrastructure</a></li>
+                    <li><a href="#" id="clk_tele" onclick="showSection(id)" style="color:white">Telecoms</a></li>
+                    <li><a href="#" id="clk_trade" onclick="showSection(id)" style="color:white">Trade</a></li>
+                    <li><a href="#" id="clk_birth" onclick="showSection(id)" style="color:white">Birth Rate</a></li>
+                    <li><a href="#" id="clk_conc" onclick="showSection(id)" style="color:white">Conclusion</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!--<div style="float:left; padding-left:100px; padding-right: 100px; padding-top:10px;">
+        <a type="button" class="btn btn-success btn-circle" style="float:left; height:30px;"
+           href="../Home.html">
+            <i class="glyphicon glyphicon-home"></i>
+            Home
+        </a>
+    </div>
+
+    <br /><br />-->
+
+    <div class="row" style="padding-left:100px; padding-right: 100px; padding-top:30px; text-align:justify">
+
+        <div id="intro">
+            Over the past 30 years, Sub Saharan Africa's GDP growth has generally trended with the World.
+            However, rates were higher from 2001-2015, including a large spike in 2004.
+            The Financial Crisis of 2008 affected the region much less.
+            <br /><br />
+            Sub Saharan Africa only contributes about 1-2% to World GDP.
+            That figure has increased slightly over the years, up to 2.1% in 2017.
+            <a href="https://foreignpolicy.com/2017/02/24/infographic-heres-how-the-global-gdp-is-divvied-up/" target="_blank">For reference</a>,
+            that figure is about the same as Canada’s contribution alone.
+            <br /><br />
+            The static visualizations from an earlier version of the website are available for exploration here:
+            <br />
+            <ul>
+                <li>
+                    <a href="../EconomicIndicators/EconomicIndicators.html" target="_blank">Economic Indicators</a>
+                </li>
+                <li>
+                    <a href="../InfrastructureIndicators/InfrastructureIndicators.html" target="_blank">Infrastructure Indicators</a>
+                </li>
+                <li>
+                    <a href="../InfrastructureTechComm/InfrastructureTechComm.html" target="_blank">Telecom Infrastructure</a>
+                </li>
+            </ul>
+            <br /><br />
+            <figure style="border: 1px solid #000; height:auto">
+                <embed id="myIframe" src="https://rdmitra.shinyapps.io/tss_wld_gdp/"
+                       style="width:100%; height:650px" />
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 1: GDP Trends for Sub Saharan Africa and the World.
+                        Also available <a href="https://rdmitra.shinyapps.io/tss_wld_gdp/" target="_blank">here</a>.<br />
+                        Source: World Bank Indicators NY.GDP.MKTP.KD.ZG , NY.GDP.MKTP.CD <br />
+                        Created with: R, Shiny<br />
+                        Access the data <a href="https://drive.google.com/drive/u/1/folders/13y50dOIkkZeAxsDNxq8-qLcTa0D1z_vG" target="_blank">here.</a>
+                    </i>
+                </figcaption>
+            </figure>
+
+        </div>
+
+
+        <div id="scope" style="display:none">
+            The focus is on Sub-Saharan Africa, which includes all African countries except those in North Africa
+            (Egypt, Libya, Tunisia, Algeria, Morocco, Western Sahara and Cape Verde).
+            The Sub-Saharan countries are geographically located in southern part of Africa.
+            They contrast with North Africa, whose territories, languages, economic situations,
+            and cultures tend to be closer to the Middle East than the rest of Africa.
+            <br /><br />
+            Throughout the exploration, countries are grouped by their income level.
+            These categories are assigned by the World Bank and are based on the country's 2017 classification.
+            Most countries in the region (27 out of 47) fall into the <font color="#d62728">Low income</font> category.
+            Geographically, countries in southern Africa are <font color="#2ca02c">Upper middle income</font> while more
+            central and landlocked countries are <font color="#d62728">Low</font> or <font color="#ff7f0e">Lower middle income</font>.
+            The lone country designated as <font color="#1f77b4">High income</font> is Seychelles, a small island
+            country known for its tourism.
+            <br /><br />
+            This page can serve as a reference throughout the visual exploration.
+            <b>Hover over the map</b> for statistics by country and <b>use the year slider</b> to explore changes over time.
+            <br /><br />
+            <figure style="border: 1px solid #000">
+                <iframe src="https://public.tableau.com/views/africa_project_intro_map/intro_map?:showVizHome=no&:embed=true"
+                        style="width:90%" height="500"></iframe>
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 2: Map of Sub Saharan Africa with economic indicators by year.
+                        Also available <a href="https://public.tableau.com/views/africa_project_intro_map/intro_map?:embed=y&:display_count=yes" target="_blank">here</a>.<br />
+                        Source: World Bank<br />
+                        Created with: Tableau<br />
+                        Access the data <a href="https://drive.google.com/drive/u/1/folders/13y50dOIkkZeAxsDNxq8-qLcTa0D1z_vG" target="_blank">here.</a>
+                    </i>
+                </figcaption>
+            </figure>
+            <br /><br />
+            Most data is sourced from <a href="https://data.worldbank.org/" target="_blank">The World Bank</a>. Infrastructure Index data
+            is sourced from <a href="https://www.afdb.org/en/" target="_blank">African Development Bank Group</a>. Trade flows data is sourced from
+            the <a href="https://www.kaggle.com/unitednations/global-commodity-trade-statistics" target="_blank">UN on Kaggle</a>.
+        </div>
+
+
+        <div id="empl" style="display:none">
+            Employment and GDP appears to be most correlated among low income countries.
+            For middle income countries, the relationship is not as clear.
+            <br /><br />
+            Though Africa has higher rates of employment, most of that employment is <i>vulnerable</i>,
+            as shown in the bar plots below.
+            <br /><br />
+            Vulnerable employment includes those who are own account workers and
+            contributing family workers. Vulnerable employment is associated with lesser wages,
+            difficult working conditions, and less stability.
+            These types of workers would not be likely to have benefits
+            or union representation. This presents a challenge for Africa as it seeks sustainable economic growth.
+            <br /><br />
+            Although vulnerable employment across the World has decreased, especially in the past 15 years,
+            it has not decreased in Sub-Saharan Africa.
+            <br /><br />
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.16/iframeResizer.min.js"></script>
+            <style>
+                iframe {
+                    min-width: 100%;
+                }
+            </style>
+            <figure style="border: 1px solid #000; height:auto">
+                <iframe id="myIframe2" src="https://rdmitra.shinyapps.io/tss_employment/" scrolling="no" frameborder="no"></iframe>
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 3: Interactive plots for GDP and employment and vulnerable employment.
+                        Also available <a href="https://rdmitra.shinyapps.io/tss_employment/" target="_blank">here</a>.<br />
+                        Source: World Bank indicator SL.EMP.TOTL.SP.ZS, modeled ILO estimate SL.EMP.VULN.ZS, modeled ILO estimate<br />
+                        Created with: R, Shiny<br />
+                        Access the data <a href="https://drive.google.com/drive/u/1/folders/13y50dOIkkZeAxsDNxq8-qLcTa0D1z_vG" target="_blank">here.</a>
+                    </i>
+                </figcaption>
+            </figure>
+            <script>
+                iFrameResize({
+                    heightCalculationMethod: 'taggedElement'
+                });
+            </script>
+        </div>
+
+
+        <div id="infra" style="display:none">
+            Infrastructure development is a key driver for progress across the African continent and a critical
+            enabler for productivity and sustainable economic growth.
+            Africa’s weak physical infrastructure base was impeding the region's progress toward improved
+            living standards, poverty reduction, domestic and international trade and investment, and
+            socially inclusive GDP growth.
+            <br /><br />
+            Across Sub Saharan Africa, high income and upper middle income countries invest a
+            higher proportion of GDP on infrastructure. The highest are Seychelles,
+            Botswana, and Cote d'Ivoire, which have well-established infrastructure
+            concentrated in certain areas to attract tourists from Europe and North America.
+            Over the past thirty years, the proportion has increased, especially in the 2006-2012 era.
+            <br /><br />
+            <figure style="border: 1px solid #000">
+                <iframe src="https://public.tableau.com/views/5_645/Sheet4?:showVizHome=no&:embed=true"
+                        style="width:90%" height="500"></iframe>
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 4: Percent of GDP on Infrastructure/industry by year and by country.
+                        Also available <a href="https://public.tableau.com/views/5_645/Sheet4?:embed=y&:display_count=yes" target="_blank">here</a>. <br />
+                        Source: World Bank Indicator NV.IND.TOTL.ZS<br />
+                        Created with: Tableau<br />
+                        Access the data <a href="https://drive.google.com/drive/u/1/folders/13y50dOIkkZeAxsDNxq8-qLcTa0D1z_vG" target="_blank">here.</a>
+                    </i>
+                </figcaption>
+            </figure>
+            <br /><br />
+            Use the dropdown in the plot below to <b>select a country</b> to see its infrastructure index
+            change over time. Some countries, such as Angola, have a decreasing infrastructure index.
+            On the other hand, countries such as Ethiopia and Kenya have been increasing their infrastructure index.
+            <br /><br />
+            <figure style="border: 1px solid #000">
+                <embed src="charts/dropdown_infra_index.html" style="width:100%; height:450px">
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 5: Infrastructure Index by year and by country.
+                        Also available <a href="charts/dropdown_infra_index.html" target="_blank">here</a>.<br />
+                        Source: African Development Bank Group<br />
+                        Created with: R, Plotly<br />
+                        Access the data <a href="https://drive.google.com/drive/u/1/folders/13y50dOIkkZeAxsDNxq8-qLcTa0D1z_vG" target="_blank">here.</a>
+                    </i>
+                </figcaption>
+            </figure>
+            <br /><br />
+            Foreign Direct Investment (FDI), usually in the form of infrastructure projects, is related to the country's income level.
+            Based on 2016 figures, there is no clear relationship between FDI and Infrastructure with GDP,
+            which is shown in the size of the bubble. In some cases, high FDI % is related
+            to higher income countries, such as Gabon, and in other cases, it is related to low income countries, such as Mozambique.
+            <br /><br />
+            <figure style="border: 1px solid #000">
+                <embed src="charts/infra_and_fdi.html" style="width:100%; height:450px">
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 6: Bubble chart of % of GDP on Infrastructure, % of GDP on FDI, and GDP by country in 2016.
+                        The size of bubble represents the country’s 2016 GDP.
+                        Also available <a href="charts/infra_and_fdi.html" target="_blank">here</a>.<br />
+                        Source: World Bank indicators NY.GDP.MKTP.CD, NV.IND.TOTL.ZS, BX.KLT.DINV.WD.GD.ZS<br />
+                        Created with: R, Plotly<br />
+                        Access the data <a href="https://drive.google.com/drive/u/1/folders/13y50dOIkkZeAxsDNxq8-qLcTa0D1z_vG" target="_blank">here.</a>
+                    </i>
+                </figcaption>
+            </figure>
+        </div>
+
+
+        <div id="tele" style="display:none">
+            Communications are a key part of a country’s infrastructure.
+            Sub-Saharan Africa has been developing its telecom sectors by increasing electricity,
+            internet and cellphone access. Electricity access grew across the region first, followed by internet, then cellphones.
+            <br /><br />
+            Across the region, as of 2016, an average of 43% of the population has <b>access to electricity</b>.
+            Burundi has the lowest level at 8%, while the Seychelles has highest level at 100%.
+            Since 2000, levels have grown across all countries, though wide disparity remains.
+            <br /><br />
+            <b>Cellphone availability</b> has grown rapidly, with most countries having over
+            100 subscriptions per 100 people. Notably, cellphone access does not differ
+            as much by the income level of the country.
+            <br /><br />
+            Though <b>internet access</b> has grown across all countries since 2000, disparity remains.
+            In the average country, 20% of the population have access to the internet as of 2016.
+            Seychelles, Cabo Verde, South Africa, and Mauritius top the list.
+            <br /><br />
+
+            <figure style="border: 1px solid #000">
+                <embed src="charts/bokeh_bar.html" style="width:100%; height:630px">
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 7: Telecom indicators by year and by country.
+                        Also available <a href="charts/bokeh_bar.html" target="_blank">here</a>.<br />
+                        Source: World Bank indicators IT.NET.USER.ZS , EG.ELC.ACCS.ZS  , IT.CEL.SETS.P2<br />
+                        Created with: Python, Bokeh<br />
+                        Access the data <a href="https://drive.google.com/drive/u/1/folders/13y50dOIkkZeAxsDNxq8-qLcTa0D1z_vG" target="_blank">here.</a>
+                    </i>
+                </figcaption>
+            </figure>
+
+            <br /><br />
+            Comparing the telecom indicators with GDP growth can reveal some modest correlations.
+            Test out different years for different indicators. In some cases, there appears to be a lag in
+            the effect - for example, setting Cellphones to 2014 and GDP Growth to 2017 reveals a somewhat
+            positive correlation.
+            <br /><br />
+
+            <figure style="border: 1px solid #000">
+                <embed src="charts/bokeh_scatter.html" style="width:100%; height:670px;">
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 8: Telecom indicators and GDP growth by year and by country.
+                        Also available <a href="charts/bokeh_scatter.html" target="_blank">here</a>.<br />
+                        Source: World Bank indicators IT.NET.USER.ZS , EG.ELC.ACCS.ZS  , IT.CEL.SETS.P2<br />
+                        Created with: Python, Bokeh<br />
+                        Access the data <a href="https://drive.google.com/drive/u/1/folders/13y50dOIkkZeAxsDNxq8-qLcTa0D1z_vG" target="_blank">here.</a>
+                    </i>
+                </figcaption>
+            </figure>
+
+        </div>
+
+        <div id="trade" style="display:none">
+            South Africa is the region's largest trader, with the highest value of both imports and exports.
+            Ethiopia has increased its trade, especially from 2013 into 2014 and now is established
+            as one of the region's largest traders.
+            <br /><br />
+            Press play to watch full timeline of trade in Sub Saharan Africa!
+            <br /><br />
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.16/iframeResizer.min.js"></script>
+            <style>
+                iframe {
+                    min-width: 100%;
+                }
+            </style>
+            <figure style="border: 1px solid #000; height:auto">
+                <iframe id="myIframe3" src="https://rdmitra.shinyapps.io/tss_trade/" scrolling="no" frameborder="no"></iframe>
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 9: Trade flows showing value in USD for exports and imports by country and by year.
+                        Based on a subset of Sub Saharan African countries, this is not a complete dataset.
+                        Also available <a href="https://rdmitra.shinyapps.io/tss_trade/" target="_blank">here</a>.<br />
+                        Source: United Nations, <a href="https://www.kaggle.com/unitednations/global-commodity-trade-statistics" target="_blank">Kaggle</a><br />
+                        Created with: R, networkD3, Shiny<br />
+                        Access the data <a href="https://drive.google.com/drive/u/1/folders/13y50dOIkkZeAxsDNxq8-qLcTa0D1z_vG" target="_blank">here.</a>
+                    </i>
+                </figcaption>
+            </figure>
+            <script>
+                iFrameResize({
+                    heightCalculationMethod: 'taggedElement'
+                });
+            </script>
+            <br /><br />
+            Some of the most valuable trade commodities in Sub Saharan Africa are
+            shown below in the word clouds, for which the size of the word indicates the value.
+            <br /><br />
+            The most common imports are: cereal, medicine, aircraft and spacecraft parts, and ships.
+            <br /><br />
+            On the other hand, the region is relying on traditional agricultural
+            exports such as: cocoa, coffee, tea, and tobacco.
+            <br /><br />
+            <figure style="border: 1px solid #000; height:auto">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <center>
+                            <h5>Exports</h5>
+                        </center>
+                        <img src="charts/exports_wordcloud.png" />
+                    </div>
+                    <div class="col-md-6">
+                        <center>
+                            <h5>Imports</h5>
+                        </center>
+                        <img src="charts/imports_wordcloud.png" />
+                    </div>
+                </div>
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 10, 11: Word clouds for which the size of the word represents the 2016 trade amount in USD across all Sub Saharan African countries.
+                        Also available here - <a href="charts/exports_wordcloud.png" target="_blank">export</a> and
+                        <a href="charts/imports_wordcloud.png" target="_blank">import</a>.<br />
+                        Source: United Nations, <a href="https://www.kaggle.com/unitednations/global-commodity-trade-statistics" target="_blank">Kaggle</a><br />
+                        Created with: R, networkD3, Shiny<br />
+                        Access the data <a href="https://drive.google.com/drive/u/1/folders/13y50dOIkkZeAxsDNxq8-qLcTa0D1z_vG" target="_blank">here.</a>
+                    </i>
+                </figcaption>
+            </figure>
+        </div>
+
+        <div id="birth" style="display:none">
+            Health indicators can also be an important part of a country’s economic success.
+            In this section, the birth rate and access to contraception are considered.
+            <br /><br />
+            Regardless of GDP growth, the figure illustrates a strong correlation among income level,
+            birth rate, and birth control availability for low income countries.
+            Middle income level countries display scattered distribution of birth rates and birth
+            control availability whereas low income countries show an extremely low rate of contraceptive
+            prevalence but high birth rate.
+            <br /><br />
+            This may be interpreted as the fact that women still face high rates of economic inequality and
+            barriers to health services. These factors may raise their risk of having an unplanned
+            pregnancy or contracting HIV. Thus, ensuring better access to healthcare, education, and
+            opportunities to earn incomes would be critical for the improvement of increasing birth
+            control rate and possibly a country’s economic success.
+            (See <a href="https://www.healthline.com/health/hiv-aids/global-gender-inequality-women-aids" target="_blank">this paper</a> for
+            more information about women’s health in Africa)
+            <br /><br />
+            <figure style="border: 1px solid #000; height:auto">
+                <embed src="charts/3D_rotatable_birth_GDP.html" style="width:100%; height:450px">
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 12: Three dimensional rotatable plot with birth control, birth rate per 10,000,
+                        and GDP growth colored by country income level.
+                        Also available <a href="charts/3D_rotatable_birth_GDP.html" target="_blank">here</a><br />
+                        Source: World Bank indicators SP.DYN.CONU.ZS, SP.DYN.CBRT.IN, NY.GDP.MKTP.KD.ZG,
+                        African Development Bank Group<br />
+                        Created with: R, Plotly<br />
+                        Access the data <a href="https://drive.google.com/drive/u/1/folders/13y50dOIkkZeAxsDNxq8-qLcTa0D1z_vG" target="_blank">here.</a>
+                    </i>
+                </figcaption>
+            </figure>
+            <br /><br />
+            The following map shows the birth rate by country along with other indicators of interest:
+            the country's access to internet and the country’s income level. Although there is variation
+            across the continent, in general, low birth rates appear correlated with the country's income level.
+            For example, South Africa has a low birth rate and is an upper middle income country while Niger
+            has a high birth rate and is a low income country.
+            <br /><br />
+            <figure style="border: 1px solid #000; height:auto">
+                <embed src="charts/leaflet_map.html" style="width:100%; height:450px">
+                <figcaption style="font-size:small">
+                    <i>
+                        Figure 13: Leaflet map showing the 2016 birth rate (per 1000) by country.
+                        Markers display rates of internet access and country income level.
+                        Also available <a href="charts/leaflet_map.html" target="_blank">here</a><br />
+                        Source: World Bank indicators, SP.DYN.CBRT.IN, IT.NET.USER.ZS<br />
+                        Created with: R, Leaflet<br />
+                        Access the data <a href="https://drive.google.com/drive/u/1/folders/13y50dOIkkZeAxsDNxq8-qLcTa0D1z_vG" target="_blank">here.</a>
+                    </i>
+                </figcaption>
+            </figure>
+        </div>
+
+        <div id="conc" style="display:none">
+            This visual narrative has explored many relationships.
+            Though it is not clear which matter most - employment, infrastructure, 
+            internet access, access to contraceptives - it is clear that they all can be important in
+            determining a country's economic success.
+            <br /><br />
+            Admittedly, some context has been left out  - war, culture, religion - but the hope is
+            that this visual exploration provides the first step in <b>establishing smart policy and aid</b>.
+            <br /><br />
+            Please reach out with questions!
+            <br /><br />
+            Kendra, RD, Sooeun
+            <br /><br />
+            <hr style="border: 1px solid green;" />
+
+            <div class="col-md-12">
+                <h2 style="float:left; padding-right:30px">Download our code and data</h2>
+                <a type="button" class="btn btn-success btn-circle" style="height:35px" target="_blank"
+                   href="https://drive.google.com/drive/u/1/folders/13y50dOIkkZeAxsDNxq8-qLcTa0D1z_vG">
+                    <i class="glyphicon glyphicon-download" style="font-size:1.5em; text-align:center"></i>
+                </a>
+            </div>
+            <div style="text-align:justify">
+
+                <div class="col-md-12" style="width:100%">
+                    <p>
+                        All scripts used in this project can be accessed below. Note that visualizations created in Tableau (maps, area chart, bubble chart)
+                        will not be included in these files.
+                        <br />
+                    </p>
+                </div>
+                <div class="col-md-12" style="width:100%">
+                    <ul style="font-family:'Courier New'">
+
+                        <li style="list-style:none; padding-top:15px"><strong>Viz Creation Files</strong></li>
+                        <li>part_2_plot_r_plotly.R  - <i>Creates the Plotly bubble chart in the Infrastructure section</i></li>
+                        <li>part_2_plot_leaflet.R - <i>Creates the Bokeh bar and scatter plots in the Telecom section</i></li>
+                        <li>part_2_plot_bokeh.ipynb - <i>Creates the rotatable 3D plot in the Birth Rate section</i></li>
+                        <li>part_2_plot_3D.R - <i>Creates the word clouds in the Trade section</i></li>
+                        <li>part_2_plot_wordclouds.R - <i>Creates the Plotly dropdown in the Infrastructure section</i></li>
+                        <li>part2_Shiny_Sankey_Exploration.R - <i>Exploratory analysis for Shiny Web Apps</i></li>
+                        <li>tss_wld_gdp , tss_trade, tss_employment - <i>Shiny app folders, includes data</i></li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row" style="height:80px; width:100%"></div>
+
+    <footer class="footer">
+        <div class="container" style="text-align:center; width:100%">
+            <span class="text-muted" style="color:white">
+                Georgetown University&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                ANLY 503 - Analytical Data Visualization&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                Kendra Gedney&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                Sooeun Oh&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                Ratnadeep Mitra
+            </span>
+        </div>
+    </footer>
+
+</body>
+</html>

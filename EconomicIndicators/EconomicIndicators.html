@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="../css/ImageGallery.css" rel="stylesheet" />
+
+    <link rel="icon" href="Images/RM-Logo.ico" />
+    <title>EoA :: Economic Indicators</title>
+
+</head>
+<body style="font-family:'Trebuchet MS'">
+
+    <div class="product-slider row" style="margin-left:10px; margin-right:10px">
+
+        <div>
+            <h3 class="underline">
+                <a type="button" class="btn btn-success btn-circle" style="float:left; height:30px"
+                   href="../Home.html">
+                    <i class="glyphicon glyphicon-home"></i>
+                </a>
+                &nbsp;&nbsp;
+                Economic Indicators
+            </h3>
+        </div>
+
+        <div class="clearfix" style="font-family: Tahoma">
+            <div id="thumbcarousel" class="carousel slide" data-interval="false">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div data-target="#carousel" data-slide-to="0" class="thumb">
+                            <img src="Images/Thumbs/EI_Avg_Annual_GDP_Growth_ggplot_tn.jpg" title="Average Annual GDP Growth %" />
+                        </div>
+                        <div data-target="#carousel" data-slide-to="1" class="thumb">
+                            <img src="Images/Thumbs/map_gdpgrowth_tn.jpg" title="GDP Growth (%) 2016" />
+                        </div>
+                        <div data-target="#carousel" data-slide-to="2" class="thumb">
+                            <img src="Images/Thumbs/map_income_level_tn.jpg" title="Sub-Saharan Africa by Income Level (2016)" />
+                        </div>
+                        <div data-target="#carousel" data-slide-to="3" class="thumb">
+                            <img src="Images/Thumbs/EI_Inflation_CPI_ggplot_tn.jpg" title="Inflation (%) - Consumer Price Index" />
+                        </div>
+                        <div data-target="#carousel" data-slide-to="4" class="thumb">
+                            <img src="Images/Thumbs/lollipop_gdp_deflator_tn.jpg" title="Inflation (%) - GDP Deflator" />
+                        </div>
+                        <div data-target="#carousel" data-slide-to="5" class="thumb">
+                            <img src="Images/Thumbs/EI_Employment_To_Population_Ratio_ggplot_tn.jpg" title="Employment to population ratio (%)" />
+                        </div>
+                        <div data-target="#carousel" data-slide-to="6" class="thumb">
+                            <img src="Images/Thumbs/EI_Vulnerable_Employment_tableau_tn.jpg" title="Vulnerable Employment (%)" />
+                        </div>
+                    </div>
+                </div>
+                <!-- /carousel-inner -->
+                <a class="left carousel-control" href="#thumbcarousel" role="button" data-slide="prev"> <i class="fa fa-angle-left" aria-hidden="true"></i> </a> <a class="right carousel-control" href="#thumbcarousel" role="button" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i> </a>
+            </div>
+            <!-- /thumbcarousel -->
+        </div>
+
+        <div style="height:20px"></div>
+
+        <div id="carousel" class="carousel slide" style="font-family: Tahoma">
+            <div class="carousel-inner" style="text-align:justify">
+                <div class="item active">
+                    <div class="adjust col-md-8"><center><img style="width:90%" src="Images/EI_Avg_Annual_GDP_Growth_ggplot.jpeg" /></center></div>
+                    <div class="col-md-4" style="padding-top:50px">
+                        Over the past 30 years, Sub Saharan Africa’s GDP growth has generally trended with the World. However, rates were higher from 2001-2015, including a large spike in 2004. The Financial Crisis of 2008 affected the region much less.
+                        <br /><br />
+                        <i>
+                            Source: <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG">World Bank Indicator NY.GDP.MKTP.KD.ZG</a>
+                            <br />
+                            Created with: R, ggplot
+                        </i>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="adjust col-md-8" style="float:left"><center><img style="width:90%" src="Images/map_gdpgrowth.png" /></center></div>
+                    <div class="col-md-4" style="padding-top:50px">
+                        Today, GDP growth across Sub Saharan Africa is diverging. Most countries experienced positive growth rates in 2016, while others declined. Eastern African countries, including Ethiopia (7.6%), Kenya (5.9%) and Tanzania (7.0%) are growing at high rates. However, the highest growth is in Guinea, at 10.5%.
+                        <br /><br />
+                        <i>
+                            Source: <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG">World Bank Indicator NY.GDP.MKTP.KD.ZG</a>
+                            <br />
+                            Created with: Tableau
+                        </i>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="adjust col-md-8" style="float:left">
+                        <center><img style="width:90%" src="Images/map_income_level.png" /></center>
+                    </div>
+                    <div class="col-md-4 row" style="text-align:justify">
+                        <div>
+                            Countries are also grouped throughout this project by their Income Level, as designated by the World Bank. Most countries (27 out of 47) in Sub-Saharan Africa fall into the Low income category. Geographically, countries in southern Africa are Upper middle income. The lone country designated as High income is Seychelles, a small island country known for its tourism.
+                            <br /><br />
+                            <i>
+                                Source: World Bank
+                                <br />
+                                Created with: Tableau (map), Matplotlib (pie chart)
+                            </i>
+                        </div>
+                        <br /><br />
+                        <div>
+                            <center><img style="width:80%" src="Images/piechart_income_level.png" /></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="adjust col-md-8" style="float:left">
+                        <center><img style="width:80%" src="Images/EI_Inflation_CPI_ggplot.jpeg" /></center>
+                    </div>
+                    <div class="col-md-4" style="padding-top:50px">
+                        There are two ways to measure inflation -- by Consumer Price Index (CPI) or by GDP Deflator. At first it may seem that the CPI and the GDP Deflator version of inflation measure the same metric, but there are a few key differences. Firstly, the GDP Deflator includes only domestic goods, not any imports.  The CPI includes anything bought by consumers, including foreign goods. Secondly, the GDP Deflator measures the prices of all goods and services while CPI measures only goods bought by consumers.
+                        <br />
+                        In this exploratory stage of the project, both measures are considered.
+                        <br /><br />
+                        <i>
+                            Source: <a href="https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG">World Bank Indicator FP.CPI.TOTL.ZG</a>
+                            <br />
+                            Created with: R, ggplot
+                        </i>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="adjust col-md-8" style="float:left">
+                        <center><img style="width:65%" src="Images/lollipop_gdp_deflator.png" /></center>
+                    </div>
+                    <div class="col-md-4" style="padding-top:50px">
+                        Averaging inflation since 1990 shows a similar trend to the previous plot. Most countries fall within a healthy, low range (&lt;10%). However, the outlier countries are Somalia, Democratic Republic of Congo and Angola, which all experienced hyperinflation at some point throughout the past thirty years.
+                        <br /><br />
+                        <i>
+                            Source: <a href=" https://data.worldbank.org/indicator/NY.GDP.DEFL.KD.ZG">World Bank indicator NY.GDP.DEFL.KD.ZG</a>
+                            <br />
+                            Created with: Python, matplotlib
+                        </i>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="adjust col-md-8" style="float:left">
+                        <center><img style="width:90%" src="Images/EI_Employment_To_Population_Ratio_ggplot.jpeg" /></center>
+                    </div>
+                    <div class="col-md-4" style="padding-top:50px">
+                        Next, the distribution of country-level employment is compared for Sub Saharan Africa against the World. African countries skew to the right, indicating their higher rates of employment. Employment rates in Africa have a tighter range than the World.
+                        <br /><br />
+                        <i>
+                            Source: <a href="https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS">World Bank indicator SL.EMP.TOTL.SP.ZS, modeled ILO estimate</a>
+                            <br />
+                            Created with: R, ggplot
+                        </i>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="adjust col-md-8" style="float:left">
+                        <center><img style="width:90%" src="Images/EI_Vulnerable_Employment_tableau.jpg" /></center>
+                    </div>
+                    <div class="col-md-4" style="padding-top:50px">
+                        Though Africa has higher rates of employment, most of that employment is <i>vulnerable</i>.
+                        <br />
+                        Vulnerable employment includes those who are own account workers and contributing family workers. Vulnerable employment is associated with lesser wages, difficult working conditions, and less stability. These types of workers would not be likely to have benefits or union representation. This presents a challenge for Africa as it seeks sustainable economic growth.
+                        <br />
+                        Although vulnerable employment across the World has decreased, especially in the past 15 years, it has not decreased in Sub-Saharan Africa.
+                        <br /><br />
+                        <i>
+                            Source: <a href="https://data.worldbank.org/indicator/SL.EMP.VULN.ZS">World Bank indicator SL.EMP.VULN.ZS, modeled ILO estimate</a>
+                            <br />
+                            Created with: Tableau
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row" style="height:80px; width:100%"></div>
+
+    <footer class="footer">
+        <div class="container" style="text-align:center; width:100%">
+            <span class="text-muted" style="color:white">
+                Georgetown University&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                ANLY 503 - Analytical Data Visualization&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                Kendra Gedney&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                Sooeun Oh&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                Ratnadeep Mitra
+            </span>
+        </div>
+    </footer>
+
+</body>
+</html>
